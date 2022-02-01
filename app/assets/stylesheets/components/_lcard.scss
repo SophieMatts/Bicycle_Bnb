@@ -86,30 +86,6 @@ p
   height:18em;
 }
 
-.btn
-{
-  border: 3px solid white;
-  padding: 10px 15px;
-
-  background: none;
-
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.3em;
-  color: white;
-
-  cursor: pointer;
-
-  transition: .3s;
-
-  &:hover {
-  background: white;
-
-  border: 0px solid white;
-
-  color: $blue;
-  }
-}
 
 // .location-card:hover
 // {
