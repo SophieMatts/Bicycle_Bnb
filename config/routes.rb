@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'bikes#index'
+  # root 'pages#home'
 
 
 end
