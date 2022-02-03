@@ -1,2 +1,10 @@
 <h1>THIS IS THE INDEX PAGE FOR BIKES</h1>
 <h3>ALL THE BIKES...</h3>
+
+<div class="card-grid-container">
+  <% @bikes.each do |bike| %>
+    <div class="list-card card-grid-item">
+      <h3><%= bike.title %></h3>
+    </div>
+  <% end %>
+</div>
