@@ -7,29 +7,37 @@
   width:100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+
 }
 
 h5
 {
   margin:0px;
-  font-size:1.4em;
+  font-size: 15px;
   font-weight:700;
 }
 
 p
 {
   font-size:12px;
+  text-align: left;
 }
+
 /* End Non-Essential  */
 
 .location-card
 {
-  height:18em;
-  width:14em;
+  height:11em;
+  width:9.3em;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-size: 270px, 270px;
+  background-position:right;
+  position:absolute;
+
   -webkit-box-orient:vertical;
   -webkit-box-direction:normal;
   -ms-flex-direction:column;
@@ -44,26 +52,13 @@ p
   box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
 }
 
-/* Top Half of card, image. */
-
-.location-image
-{
-  height: 300px;
-  width:14em;
-  padding:1em 2em;
-  position:Absolute;
-  top:0px;
-  background-size:cover;
-  background-repeat:no-repeat;
-  // background-image:url('app/assets/images/london.jpg');
-}
 
 /* Bottom Card Section */
 
 .location-description
 {
   background-color: #FAFAFC;
-  height:12em;
+  height:6em;
   width:14em;
   position:absolute;
   bottom:0em;
@@ -71,7 +66,7 @@ p
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   padding: 0.5em 1em;
-  text-align:center;
+  text-align:left;
 }
 
 /* Property Cards Hover States */
@@ -85,9 +80,3 @@ p
 {
   height:18em;
 }
-
-
-// .location-card:hover
-// {
-//   background-color:white;
-// }
