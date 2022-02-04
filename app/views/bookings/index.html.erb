@@ -10,7 +10,7 @@
           <strong>Start date</strong><p><%= booking.start_date %></p>
           <strong>End date</strong><p><%= booking.end_date %></p>
         </div>
-        <h2 class="card-trip-pricing"><%= link_to "View details" %></h2>
+        <h2 class="card-trip-pricing"><%= link_to "View details", booking_path(booking.bike_id)%></h2>
         </div>
         </div>
     <% end %>
