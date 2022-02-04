@@ -15,14 +15,15 @@ descriptions = ['Excellent for cruising', 'Great for getting from A - B quickly'
     description: descriptions.sample,
     bike_type: types_of_bikes.sample,
     location: 'Coventry',
-    cost: 233,
+    cost: 233
   )
-
-  if bike.save
-    puts "Bike added"
-  else
-    puts "Failed"
-  end
+  bike.save!
+  booking = Booking.new(
+    start_date: Date.today,
+    end_date: Date.today,
+    bike_id: bike.id
+  )
+  booking.save!
 
 end
 
