@@ -1,43 +1,44 @@
-
-<h1>THIS IS THE INDEX PAGE FOR BIKES</h1>
-<h3>ALL THE BIKES...</h3>
-
-
-
-<div class="card-grid-container">
-
-  <% @bikes.each do |bike| %>
-
-    <div class="card-wrapper card-container">
-
-      <div class="bike-photo">
-      </div>
+<div class="container">
+  <h1>THIS IS THE INDEX PAGE FOR BIKES</h1>
+  <h3>ALL THE BIKES...</h3>
 
 
-      <div class="all-bike-info">
 
-        <div class="wrapping-title-button">
+  <div class="card-grid-container">
 
-          <div class="title">
-            <p> <%= bike.title %> </p>
+    <% @bikes.each do |bike| %>
+
+      <div class="card-wrapper card-container">
+
+        <div class="bike-photo">
+        </div>
+
+
+        <div class="all-bike-info">
+
+          <div class="wrapping-title-button">
+
+            <div class="title">
+              <p> <%= bike.title %> </p>
+            </div>
+
+          <a class="btn btn-primary btn-sm" href="#">Book now</a>
+
           </div>
 
-         <a class="btn btn-primary btn-sm" href="#">Book now</a>
+          <div class="text-bike">
+            <%= bike.description %>
+            <br>
+            <%= bike.cost %>
+            <br>
+            <%= bike.bike_type %>
+          </div>
 
-        </div>
-
-        <div class="text-bike">
-          <%= bike.description %>
-          <br>
-          <%= bike.cost %>
-          <br>
-          <%= bike.bike_type %>
         </div>
 
       </div>
 
-    </div>
+    <% end %>
 
-  <% end %>
-
+  </div>
 </div>
