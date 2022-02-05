@@ -24,14 +24,19 @@
         <h6>Need a ride? Check out our locations.</h6>
       </div>
     </div>
+
     <div id="flex-wrap">
       <div class="row">
-        <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/all_bikes.jpeg')%>)">
-          <div class="home_bike-description">
-            <h5> All Bikes </h5>
-            <p>See range of all bikes!</p>
+        <%= link_to bikes_path do %>
+          <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/all_bikes.jpeg')%>)">
+            <div class="home_bike-description">
+              <h5> All Bikes </h5>
+              <p>See range of all bikes!</p>
+            </div>
           </div>
-        </div>
+        <% end %>
+
+
 
         <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/leisure_bike.jpeg')%>)">
           <div class="home_bike-description">
