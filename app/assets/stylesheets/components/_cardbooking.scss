@@ -2,6 +2,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .card-trip > img {
@@ -27,8 +29,11 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+ // align-items: flex-start;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card-trip-infos .card-trip-user {
@@ -36,4 +41,27 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-trip-detail {
+  margin-bottom: 18px;
+}
+
+.card-trip-detail p {
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-size: 16px;
+}
+
+
+.price{
+  font-size: 30px ;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card-trip-show {
+  float: right;
 }
