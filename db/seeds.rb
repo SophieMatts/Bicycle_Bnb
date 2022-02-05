@@ -12,6 +12,7 @@ descriptions = ['Excellent for cruising', 'Great for getting from A - B quickly'
 locations = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Southampton', 'Liverpool', 'Newcastle', 'Sheffield', 'Belfast']
 
 10.times do
+
   bike = Bike.new(
     title: "#{Faker::Space.nasa_space_craft} #{(rand(1..9) * 1000)}",
     description: descriptions.sample,
@@ -24,7 +25,8 @@ locations = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Southamp
     puts "Bike added"
   else
     puts "Failed"
-  end
+  # end
+
 
   user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret'
   if user.save
