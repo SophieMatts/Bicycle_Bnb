@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
-types_of_bikes = ['Road Bike', 'Mountain Bike', 'Touring Bike', 'Folding Bike', 'BMX']
+types_of_bikes = ['Road', 'Mountain', 'Touring', 'Folding Bike', 'BMX', 'Hybrid']
 descriptions = ['Excellent for cruising', 'Great for getting from A - B quickly', 'Just a fun bike', 'Collectors Item']
 locations = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Southampton', 'Liverpool', 'Newcastle', 'Sheffield', 'Belfast']
 

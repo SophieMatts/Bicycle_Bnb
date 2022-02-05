@@ -1,25 +1,27 @@
 <div class="container">
     <h1>My bookings</h1>
-  <div class="row">
-    <div class="col-12 d-flex flex-wrap mt-3">
+
+    <div class="col-12 d-flex flex-column mt-3">
       <% @bookings.each do |booking| %>
         <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-trip-infos">
             <div>
-              <strong><%= booking.bike.title %></strong><p><%= booking.start_date %></p>
-              <strong>End date</strong><p><%= booking.end_date %></p>
+              <div class="card-trip-detail"><strong><%= booking.bike.title %></strong></div>
+              <div class="card-trip-detail"><strong><%= booking.bike.bike_type %></strong></div>
             </div>
             <div>
-              <strong>Start date</strong><p><%= booking.start_date %></p>
-              <strong>End date</strong><p><%= booking.end_date %></p>
+              <div class="card-trip-detail"><p><strong>Start date</strong> - <%= booking.start_date %></strong></p></div>
+              <div class="card-trip-detail"><p><strong>End date</strong> - <%= booking.end_date %></p></div>
             </div>
           </div>
-          <h2 class="card-trip-pricing"><%= link_to "View details" %></h2>
+          <div class="card-trip-pricing">
+            <h2><%= link_to "View details"  %></h2>
+          </div>
         </div>
       <% end %>
     </div>
-  </div>
+
 </div>
 
 <%# <div class="container">
