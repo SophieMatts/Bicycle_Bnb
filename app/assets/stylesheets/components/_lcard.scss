@@ -15,12 +15,14 @@ h5
   margin:0px;
   font-size: 15px;
   font-weight:700;
+  font-family: Arial, sans-serif;
 }
 
 p
 {
   font-size:12px;
   text-align: left;
+  font-family: Arial, sans-serif;
 }
 
 /* End Non-Essential  */
@@ -58,6 +60,8 @@ p
 .location-description
 {
   background-color: #FAFAFC;
+  color:#606060;
+  font-family: Arial, sans-serif;
   height:6em;
   width:14em;
   position:absolute;
