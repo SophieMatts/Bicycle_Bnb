@@ -27,7 +27,7 @@ p
 
 /* End Non-Essential  */
 
-.location-card
+.home_bike-card
 {
   height:9em;
   width:9em;
@@ -36,8 +36,8 @@ p
   display:flex;
   background-size: contain;
   background-repeat:no-repeat;
-  background-size: 270px, 270px;
-  background-position:right;
+  background-size: 150px, 150px;
+  background-position:center;
   position:absolute;
 
   -webkit-box-orient:vertical;
@@ -57,13 +57,13 @@ p
 
 /* Bottom Card Section */
 
-.location-description
+.home_bike-description
 {
   background-color: #FAFAFC;
   color:#606060;
-  font-family: 'Spectral', serif !important;
+  font-family: 'Playfair Display, serif';
   height:5em;
-  width:20em;
+  width:14em;
   position:absolute;
   bottom:0em;
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -75,12 +75,12 @@ p
 
 /* Property Cards Hover States */
 
-.location-card:hover .location-description
+.home_bike-card:hover .home_bike-description
 {
   height:0em;
   padding:0px 1em;
 }
-.location-card:hover .location-image
+.home_bike-card:hover .home_bike-image
 {
   height:18em;
 }
