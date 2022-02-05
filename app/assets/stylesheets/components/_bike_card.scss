@@ -1,0 +1,35 @@
+.card-grid-container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: space-between;
+}
+
+.card-wrapper {
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 16px;
+}
+
+.bike-photo {
+  background-color: blue;
+  width: 300px;
+  height: 200px;
+  background-image: url(asset_path('Random_bike.jpg'));
+  background-size: contain;
+  border-radius: 2px;
+}
+
+.btn .btn-primary .btn-sm{
+ text-align: right;
+
+}
+
+.wrapping-title-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
