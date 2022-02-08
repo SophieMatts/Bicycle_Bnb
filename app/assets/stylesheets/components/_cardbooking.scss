@@ -1,120 +1,37 @@
-// .card-trip {
-//   overflow: hidden;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   margin-bottom: 20px;
-//   border-radius: 5px;
-// }
-
-// .card-trip > img {
-//   height: 200px;
-//   width: 100%;
-//   object-fit: cover;
-// }
-
-// .card-trip h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
-// .card-trip p {
-//   font-size: 12px;
-//   opacity: .7;
-//   margin: 0;
-// }
-
-
-// .card-trip .card-trip-infos {
-//   padding: 16px;
-//   display: flex;
-//   justify-content: space-between;
-//  // align-items: flex-start;
-//   position: relative;
-//   justify-content: center;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-
-// .card-trip-infos .card-trip-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
-
-.card-trip-detail {
-  margin-bottom: 18px;
-}
-
-// .card-trip-detail p {
-//   font-family: "Work Sans", "Helvetica", "sans-serif";
-//   font-size: 16px;
-// }
-
-
-// .price{
-//   font-size: 30px ;
-// }
-
-.title {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-// .card-trip-show {
-//   float: right;
-// }
-
-// .card-container{
-//   padding: 0;
-// }
-
 .booking-card{
+  width: 650px;
+  display: flex;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
   border-radius: 5px;
-  padding: 20px;
 }
 
-.booking-card-section > img {
+.booking-card > img {
   height: 200px;
-  width: 100%;
+  width: 200px;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-right: 12px;
 }
 
-.booking-card-section:last-child {
-  display: flex;
-  position: relative;
+.booking-info {
+  width: 200px;
 }
 
-.booking-btn-group {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  position: absolute;
-  top: 50px;
-  left:50px;
-}
 
-.booking-btn {
-  width: 250px;
-  height: 50px;
+.btn-booking {
+  width: 180px;
+  height: 35px;
   color: black;
   padding: 8px 24px;
   border-radius: 4px;
+  background-color: blanchedalmond;
   transition: background 0.3s ease;
-  border-radius: 42px;
-  background: #ffffff;
-  box-shadow:  5px 5px 8px #e8e8e8,
-              -5px -5px 8px #ffffff;
+  opacity: 0.7;
+  font-size: 12px;
 }
 
-
-.booking-btn:hover {
+.btn-booking:hover {
   opacity: 1;
 }
