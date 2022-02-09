@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
@@ -22,46 +23,138 @@
         </button>
 
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to "Home", root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Bookings", root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%#= link_to "Action", "#", class: "dropdown-item" %>
-                <%#= link_to "Another action", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
-          <% end %>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to "Home", root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Bookings", root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item dropdown">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%#= link_to "Action", "#", class: "dropdown-item" %>
+                  <%#= link_to "Another action", "#", class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required col-4" type="text" name="search[query]" id="search-bike" placeholder="type of bike" />
-        <input class="form-control string required" type="text" name="location[query]" id="search-location" placeholder="location" />
-        <input class="form-control string required" type="text" name="start-date[query]" id="search-start-date" placeholder="from" />
-        <input class="form-control string required" type="text" name="end-date[query]" id="search-end-date" placeholder="to" />
-        <input class="form-control string required" type="text" name="search[query]" id="search" placeholder="search" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
+    <div class="container">
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required col-4" type="text" name="search[query]" id="search-bike" placeholder="type of bike" />
+          <input class="form-control string required" type="text" name="location[query]" id="search-location" placeholder="location" />
+          <input class="form-control string required" type="text" name="start-date[query]" id="search-start-date" placeholder="from" />
+          <input class="form-control string required" type="text" name="end-date[query]" id="search-end-date" placeholder="to" />
+          <input class="form-control string required" type="text" name="search[query]" id="search" placeholder="search" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      <% end %>
+    </div>
+
+
+    <div class="banner" id="banner">
+      <div class="imgban" id="imgban3">
       </div>
-    <% end %>
-  </div>
+      <div class="imgban" id="imgban2">
+
+      </div>
+      <div class="imgban" id="imgban1">
+
+      </div>
+    </div>
+
+    <script>
+      var bannerStatus = 1;
+      var bannerTimer = 8000;
+
+      window.onload = function() {
+        bannerLoop();
+      }
+
+      var startBannerLoop = setInterval(function() {
+          bannerLoop();
+      }, bannerTimer);
+
+      document.getElementById("banner").onmouseenter = function() {
+        clearInterval(startBannerLoop);
+      }
+
+      document.getElementById("banner").onmouseleave = function() {
+        startBannerLoop = setInterval(function() {
+          bannerLoop();
+        }, bannerTimer);
+      }
+
+      function bannerLoop() {
+        if (bannerStatus === 1) {
+          document.getElementById("imgban2").style.opacity = "0";
+         setTimeout(function() {
+            document.getElementById("imgban1").style.right = "0px";
+            document.getElementById("imgban1").style.zIndex = "1000";
+            document.getElementById("imgban2").style.right = "-1200px";
+            document.getElementById("imgban2").style.zIndex = "1500";
+            document.getElementById("imgban3").style.right = "1200px";
+            document.getElementById("imgban3").style.zIndex = "500";
+          }, 500);
+          setTimeout(function() {
+            document.getElementById("imgban2").style.opacity = "1";
+          }, 1000);
+          bannerStatus = 2;
+        }
+
+        else if (bannerStatus === 2) {
+          document.getElementById("imgban3").style.opacity = "0";
+         setTimeout(function() {
+            document.getElementById("imgban2").style.right = "0px";
+            document.getElementById("imgban2").style.zIndex = "1000";
+            document.getElementById("imgban3").style.right = "-1200px";
+            document.getElementById("imgban3").style.zIndex = "1500";
+            document.getElementById("imgban1").style.right = "1200px";
+            document.getElementById("imgban1").style.zIndex = "500";
+          }, 500);
+          setTimeout(function() {
+            document.getElementById("imgban3").style.opacity = "1";
+          }, 1000);
+          bannerStatus = 3;
+        }
+
+        else if (bannerStatus === 3) {
+          document.getElementById("imgban1").style.opacity = "0";
+         setTimeout(function() {
+            document.getElementById("imgban3").style.right = "0px";
+            document.getElementById("imgban3").style.zIndex = "1000";
+            document.getElementById("imgban1").style.right = "-1200px";
+            document.getElementById("imgban1").style.zIndex = "1500";
+            document.getElementById("imgban2").style.right = "1200px";
+            document.getElementById("imgban2").style.zIndex = "500";
+          }, 500);
+          setTimeout(function() {
+            document.getElementById("imgban1").style.opacity = "1";
+          }, 1000);
+          bannerStatus = 1;
+        }
+
+      }
+    </script>
+
+
+
+
+
+
 
 
     <%= yield %>

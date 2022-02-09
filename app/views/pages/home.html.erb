@@ -14,110 +14,110 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
-
-  <div class="container">
-    <div id="flex-wrap">
-      <div class="row">
-        <h5>Bicycle BNB</h5>
+  <body>
+    <div class="container">
+      <div id="flex-wrap">
+        <div>
+          <h5>Types of Bike</h5>
+        </div>
       </div>
-      <div class="row">
-        <h6>Need a ride? Check out our locations.</h6>
-      </div>
-    </div>
 
-    <div id="flex-wrap">
-      <div class="row">
-        <%= link_to bikes_path do %>
-          <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/all_bikes.jpeg')%>)">
+      <div id="flex-wrap">
+        <div class="row">
+          <%= link_to bikes_path do %>
+            <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/all.bikes.jpeg')%>)">
+              <div class="home_bike-description">
+                <h5> All Bikes </h5>
+              </div>
+            </div>
+          <% end %>
+
+
+          <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/road.bike.jpg')%>)">
             <div class="home_bike-description">
-              <h5> All Bikes </h5>
-              <p>See range of all bikes!</p>
+              <h5> Road </h5>
+              <p>For long Distance on the Road</p>
             </div>
           </div>
-        <% end %>
 
-
-
-        <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/leisure_bike.jpeg')%>)">
-          <div class="home_bike-description">
-            <h5> Leisure </h5>
-            <p>Rides around town</p>
+          <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/mountain.bike.png')%>)">
+            <div class="home_bike-description">
+              <h5> Mountain </h5>
+              <p>Best for off-road<p>
+            </div>
           </div>
-        </div>
 
-        <div class="home_bike-card" style="background-image: url(<%= image_path('_home_bike_card/mountain_bike.jpeg')%>)">
-          <div class="home_bike-description">
-            <h5> Mountain </h5>
-            <p>Adventures offroad<p>
-          </div>
         </div>
-
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div id="flex-wrap">
-      <div class="row">
-        <div class="location-card" style="background-image: url(<%= image_path('_lcard/london.bike.jpeg')%>)">
-          <div class="location-description">
-            <h5> London </h5>
-            <p>Hire from here!</p>
-          </div>
+    <div class="container">
+      <div id="flex-wrap">
+        <div>
+          <h5>Locations</h5>
         </div>
-
-        <div class="location-card" style="background-image: url(<%= image_path('_lcard/paris.bike.jpeg')%>)">
-          <div class="location-description">
-            <h5> Paris </h5>
-            <p>Hire from here!</p>
+      </div>
+      <div id="flex-wrap">
+        <div class="row">
+          <div class="location-card" style="background-image: url(<%= image_path('_lcard/london.bike.png')%>)">
+            <div class="location-description">
+              <h5> London </h5>
+              <p>Hire from here!</p>
+            </div>
           </div>
-        </div>
 
-        <div class="location-card" style="background-image: url(<%= image_path('_lcard/amsterdam.bike.jpeg')%>)">
-          <div class="location-description">
-            <h5> Amsterdam </h5>
-            <p>Hire from here!</p>
+          <div class="location-card" style="background-image: url(<%= image_path('_lcard/paris.bike.jpeg')%>)">
+            <div class="location-description">
+              <h5> Paris </h5>
+              <p>Hire from here!</p>
+            </div>
+          </div>
+
+          <div class="location-card" style="background-image: url(<%= image_path('_lcard/amsterdam.bike.jpeg')%>)">
+            <div class="location-description">
+              <h5> Amsterdam </h5>
+              <p>Hire from here!</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="footer">
-    <footer>
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-md-3 item">
-          <h3>Support</h3>
-          <ul>
-            <li><a href="#">Help Centre</a></li>
-            <li><a href="#">Safety Information</a></li>
-            <li><a href="#">Cancellation Options</a></li>
-          </ul>
+    <div class="footer">
+      <footer>
+        <div class="row justify-content-center">
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Help Centre</a></li>
+              <li><a href="#">Safety Information</a></li>
+              <li><a href="#">Cancellation Options</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Community</h3>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Meetup</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Newsroom</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+            <p class="copyright">Bicycle BNB © 2022</p>
+          </div>
         </div>
-        <div class="col-sm-4 col-md-3 item">
-          <h3>Community</h3>
-          <ul>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Meetup</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-4 col-md-3 item">
-          <h3>About</h3>
-          <ul>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Newsroom</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
-          <p class="copyright">Bicycle BNB © 2022</p>
-        </div>
-      </div>
-    </footer>
-  </div>
-
+      </footer>
+    </div>
+  </body>
 
 
 </html>
