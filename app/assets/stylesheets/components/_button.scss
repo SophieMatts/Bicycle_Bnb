@@ -39,3 +39,17 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-main {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1C1565;
+  transition: background 0.3s ease;
+}
+
+.btn-main:hover{
+  background: #5145D9;
+  font-weight: bold;
+  color: white;
+}
