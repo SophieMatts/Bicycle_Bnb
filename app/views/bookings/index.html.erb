@@ -1,47 +1,33 @@
 <div class="container">
-    <h1>My bookings</h1>
-
-    <div class="col-12 d-flex flex-column mt-3 card-container">
+  <h2 class="mt-3">🚴🏼‍♂️ Your Bookings</h2>
+  <div class="row justify-content-center">
+   <div class="col-8 mt-3">
+    <% if @bookings.empty?%>
+      <p>You have no orders</p>
+    <% else %>
       <% @bookings.each do |booking| %>
-        <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <div class="card-trip-detail title"><strong><%= booking.bike.title %></strong></div>
-              <div class="card-trip-detail"><strong><%= booking.bike.bike_type %></strong></div>
-            </div>
-            <div>
-              <div class="card-trip-detail"><p><strong>Start date</strong> - <%= booking.start_date %></p></div>
-              <div class="card-trip-detail"><p><strong>End date</strong> - <%= booking.end_date %></p></div>
-            </div>
-            <div class="price">
-              <div class="card-trip-detail "><strong>£<%= booking.bike.cost %></strong></div>
-            </div>
-          </div>
-
-          <div class="btn card-trip-show">
-            <h2><%= link_to "View details"  %></h2>
+        <div class="booking-card">
+         <%= image_tag("Random_bike.jpg") %>
+        <div class="booking-info mr-5 d-flex flex-column justify-content-center">
+          <h3><%= booking.bike.title %></h3>
+          <p class="mb-3"><%= booking.bike.description %></p>
+          <p><strong>Type</strong> - <%= booking.bike.bike_type %></p>
+          <p><strong>Location</strong> - <%= booking.bike.location %></p>
+          <div class="booking-info-date d-flex justify-content-between">
+            <p><strong>Start date</strong><br/> <%= booking.start_date %></p>
+            <p><strong>End date</strong><br/> <%= booking.end_date %></p>
           </div>
         </div>
+        <div class="booking-btn-group d-flex flex-column justify-content-center">
+          <%= link_to "Edit Booking", edit_booking_path(booking), class: "btn btn-booking mb-3" %>
+          <%= button_to booking_path(booking), class: "btn btn-booking mb-3", method: :delete do %>
+          <span>Delete Booking</span>
+          <% end %>
+        </div>
+      </div>
       <% end %>
-    </div>
+    <% end %>
+   </div>
+  </div>
 
 </div>
-
-<%# <div class="container">
-    <h1>My bookings</h1>
-  <div class="row">
-    <div class="col-12 d-flex flex-wrap mt-3">
-      <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-        <div>
-          <strong>Start date</strong><p>13.02.2022</p>
-          <strong>End date</strong><p>13.02.2022</p>
-        </div>
-        <%# <h2 class="card-trip-pricing"><%= link_to "View details" %>
-         <%# </div>
-        </div>
-    </div>
-  </div>
-</div> %>

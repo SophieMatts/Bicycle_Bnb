@@ -1,4 +1,6 @@
-.card-trip {
+.booking-card{
+  width: 650px;
+  display: flex;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -6,66 +8,29 @@
   border-radius: 5px;
 }
 
-.card-trip > img {
+.booking-card > img {
   height: 200px;
-  width: 100%;
+  width: 200px;
   object-fit: cover;
+  margin-right: 12px;
 }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.booking-info {
+  width: 200px;
 }
 
-.card-trip p {
+.btn-booking {
+  width: 180px;
+  height: 35px;
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: blanchedalmond;
+  transition: background 0.3s ease;
+  opacity: 0.7;
   font-size: 12px;
-  opacity: .7;
-  margin: 0;
 }
 
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
- // align-items: flex-start;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.card-trip-detail {
-  margin-bottom: 18px;
-}
-
-.card-trip-detail p {
-  font-family: "Work Sans", "Helvetica", "sans-serif";
-  font-size: 16px;
-}
-
-
-.price{
-  font-size: 30px ;
-}
-
-.title {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.card-trip-show {
-  float: right;
-}
-
-.card-container{
-  padding: 0;
+.btn-booking:hover {
+  opacity: 1;
 }
