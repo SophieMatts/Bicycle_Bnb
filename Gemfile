@@ -5,6 +5,9 @@ ruby "2.7.4"
 
 gem 'devise'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
+
 gem 'faker'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
