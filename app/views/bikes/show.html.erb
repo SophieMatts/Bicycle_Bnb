@@ -1,1 +1,21 @@
-<h1>THE SHOW PAGE, SHOWING A SPECIFIC BIKE...</h1>
+<div class="container">
+  <div class="row">
+    <div class="col photos col-md-6 col-12">
+      <div class="img-carousel">
+        <div class="img-thumb"></div>
+        <div class="img-thumb"></div>
+        <div class="img-thumb"></div>
+        <div class="img-thumb"></div>
+      </div>
+      <div class="img-full">
+      </div>
+    </div>
+    <div class="col details">
+      <div class="details-info">
+        <h1 class="main-heading"><%= @bike.title %></h1>
+        <p><strong>Description: </strong><%= @bike. %>
+      </div>
+      <div class="btn btn-gradient"><%= link_to "Book" %></div>
+    </div>
+  </div>
+</div>
