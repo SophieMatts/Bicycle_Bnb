@@ -1,0 +1,26 @@
+.photos {
+  //border-radius: 5px;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+}
+
+.photos .img-carousel {
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.photos .img-carousel .img-thumb {
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: $blue;
+  margin: 0 0 5px 0;
+}
+
+.photos .img-full {
+  border-radius: 5px;
+  background-color: $blue;
+  flex-grow: 5;
+
+}
