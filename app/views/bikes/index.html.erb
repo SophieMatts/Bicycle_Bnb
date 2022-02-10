@@ -1,44 +1,37 @@
 <div class="container">
-  <h1>THIS IS THE INDEX PAGE FOR BIKES</h1>
-  <h3>ALL THE BIKES...</h3>
 
+    <div class="card-grid-container">
 
+      <% @bikes.each do |bike| %>
 
-  <div class="card-grid-container">
+        <div class="card-wrapper">
 
-    <% @bikes.each do |bike| %>
+          <div class="bike-photo"></div>
 
-      <div class="card-wrapper card-container">
+          <div class="all-bike-info">
 
-        <div class="bike-photo">
-        </div>
-
-
-        <div class="all-bike-info">
-
-          <div class="wrapping-title-button">
-
-            <div class="title">
-              <p> <%= bike.title %> </p>
+            <div class="d-flex justify-content-between align-items-center py-2 ">
+              <div> <h2 class="m-0 sub-heading"> <%= bike.title %> </h2> </div>
+              <a class="btn btn-primary btn-sm bike-btn" href="#">Book now</a>
             </div>
 
-          <a class="btn btn-primary btn-sm" href="#">Book now</a>
+            <div>
+              <p id="bike-cost"> £<%= bike.cost %> per day</p>
+            </div>
 
-          </div>
+            <div class="text-bike">
+              <div >
+                <p> <strong> <%= bike.location %> </strong> </p>
+                <p> <strong> <%= bike.bike_type %> </strong> </p>
+              </div>
+            </div>
 
-          <div class="text-bike">
-            <%= bike.description %>
-            <br>
-            <%= bike.cost %>
-            <br>
-            <%= bike.bike_type %>
           </div>
 
         </div>
 
-      </div>
+      <% end %>
 
-    <% end %>
+    </div>
 
-  </div>
 </div>

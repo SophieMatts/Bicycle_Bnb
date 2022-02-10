@@ -1,11 +1,11 @@
 .card-grid-container {
   display: flex;
-  //max-width: 1200px;
   margin: auto;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 24px;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 .card-wrapper {
@@ -24,12 +24,16 @@
 }
 
 .btn .btn-primary .btn-sm{
- text-align: right;
-
+  text-align: right;
 }
 
-.wrapping-title-button {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+.bike-btn {
+  border-radius: 4px;
+}
+
+#bike-cost {
+text-align: right;
+margin-bottom: 0px;
+font-size: smaller;
+font-weight: bold;
 }
