@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0 auto ;
+}
+
+.date-fields {
+  flex-direction: column;
+  display: block;
+  align-items: stretch;
+}
+
+.date-fields > * {
+  margin: 10px;
+}
+
+.date-fields .btn-main {
+  display: block;
+}

@@ -1,0 +1,11 @@
+<form class="booking-form col-md-6">
+  <%= simple_form_for (@booking) do |f| %>
+    <div class="form-fields">
+    <p><strong>Bike: </strong><%=  %></p>
+    <%= f.date_field :start_date, class: "form-control"  %>
+    <%= f.date_field :end_date, class: "form-control" %>
+    <%= f.submit "Submit", class: "btn btn-main" %>
+
+    </div>
+  <% end %>
+</form>
