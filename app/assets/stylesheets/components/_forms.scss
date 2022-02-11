@@ -1,19 +1,36 @@
-form {
+.booking-form {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto 0 auto ;
+  flex-direction: row;
+  padding: 0;
+  align-content: stretch;
+  justify-content: space-between;
 }
 
-.date-fields {
+@media only screen and (max-width: 767px) {
+  .booking-form {
+    flex-direction: column;
+  }
+}
+
+.form-fields {
   flex-direction: column;
   display: block;
   align-items: stretch;
 }
 
-.date-fields > * {
-  margin: 10px;
+.form-fields p {
+  font-size: 16px;
 }
 
-.date-fields .btn-main {
+.form-fields > * {
+  margin: 15px 0;
+}
+
+.form-fields .btn-main {
   display: block;
+
+}
+
+.form-image {
+
 }
