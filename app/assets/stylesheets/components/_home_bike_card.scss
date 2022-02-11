@@ -29,14 +29,13 @@ p
 
 .home_bike-card
 {
-  height:9em;
-  width:9em;
+  height:256px;
+  width:370px;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
   background-size: contain;
   background-repeat:no-repeat;
-  background-size: 150px, 150px;
   background-position:center;
   position:absolute;
 
@@ -63,7 +62,7 @@ p
   color:#606060;
   font-family: 'Playfair Display, serif';
   height:5em;
-  width:14em;
+  width:50em;
   position:absolute;
   bottom:0em;
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
