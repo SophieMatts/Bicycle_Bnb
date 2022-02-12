@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
 
-
   # CRUD actions (methods) for the bookings controller
 
   def index
