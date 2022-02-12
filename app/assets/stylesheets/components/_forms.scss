@@ -31,9 +31,10 @@
 
 }
 
-.form-image {
+
+.form-image img{
   width: 350px;
   height: 350px;
-  background-color:#1C1565;
   display:block;
+  object-fit: cover;
 }
