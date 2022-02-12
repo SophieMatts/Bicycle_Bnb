@@ -6,13 +6,18 @@
 
         <div class="card-wrapper">
 
-          <div class="bike-photo"></div>
+          <% if bike.photo.attached? %>
+            <%= cl_image_tag bike.photo.key, height: 200, width: 300, crop: :fill %>
+          <%else%>
+          <h1>Photo not attached??!!!</h1>
+            <div class="bike-photo"> </div>
+          <%end%>
 
           <div class="all-bike-info">
 
             <div class="d-flex justify-content-between align-items-center py-2 ">
               <div> <h2 class="m-0 sub-heading"> <%= bike.title %> </h2> </div>
-              <a class="btn btn-primary btn-sm bike-btn" href="#">Book now</a>
+              <%= link_to "View", bike_path(bike), class: "btn btn-primary btn-sm btn-main" %>
             </div>
 
             <div>
