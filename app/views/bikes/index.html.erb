@@ -6,7 +6,12 @@
 
         <div class="card-wrapper">
 
-          <div class="bike-photo"></div>
+          <% if bike.photo.attached? %>
+            <%= cl_image_tag bike.photo.key, height: 200, width: 300, crop: :fill %>
+          <%else%>
+            <div class="bike-photo">
+            </div>
+          <%end%>
 
           <div class="all-bike-info">
 
