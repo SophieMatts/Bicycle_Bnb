@@ -1,7 +1,6 @@
 .photos {
   //border-radius: 5px;
-  height: 350px;
-  display: flex;
+   display: flex;
   flex-direction: row;
 }
 
@@ -14,13 +13,27 @@
   border-radius: 5px;
   width: 60px;
   height: 60px;
-  background-color: $blue;
+  background-color: #000;
   margin: 0 0 5px 0;
 }
 
 .photos .img-full {
   border-radius: 5px;
-  background-color: $blue;
+  background-color: #000;
   flex-grow: 5;
+  height: 350px;
+}
 
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.details .btn-main {
+  display: block;
+  justify-self: stretch;
+}
+
+.bread-crumb {
+  justify-self: left;
 }

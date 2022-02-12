@@ -61,6 +61,7 @@ user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :
     puts "Failed"
   end
 
+<<<<<<< HEAD
 
   booking = Booking.create(
     user_id: user.id,
@@ -74,5 +75,19 @@ user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :
   else
     puts "Failed"
   end
+=======
+  # booking = Booking.create(
+  #   user_id: user.id,
+  #   bike_id: bike.id,
+  #   start_date: Date.today,
+  #   end_date: Date.today
+  # )
+  #  if booking.save
+  #   puts "Booking added"
+  # else
+  #   puts "Failed"
+  # end
+end
+>>>>>>> d368412dddd58973637ce63f9361c0b0f0b6fdd3
 
   puts "Seeds added....."

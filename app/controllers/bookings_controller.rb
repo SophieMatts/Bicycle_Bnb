@@ -12,13 +12,18 @@ class BookingsController < ApplicationController
   end
 
   def new
+    get_bike
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    redirect_to bookings_path if @booking.save
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -33,13 +38,17 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    # redirect_to restaurants_path
+    redirect_to bookings_path
   end
 
   private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :bike_id)
+  end
+
+  def get_bike
+    @bike = Bike.find(params[:bike_id])
   end
 
 end

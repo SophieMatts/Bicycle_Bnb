@@ -1,5 +1,8 @@
 <div class="container">
-  <div class="row">
+
+    <p style="font-size: 14px; color: grey;">Bikes / London / Endeavour 5000</p>
+
+  <div class="row show-details">
     <div class="col photos col-md-6 col-12">
       <div class="img-carousel">
         <div class="img-thumb"></div>
@@ -13,9 +16,12 @@
     <div class="col details">
       <div class="details-info">
         <h1 class="main-heading"><%= @bike.title %></h1>
-        <p><strong>Description: </strong><%= @bike. %>
+        <p><strong>Description: </strong><%= @bike.description %>
+        <p><strong>Cost per day: </strong><%= @bike.cost %>
       </div>
-      <div class="btn btn-gradient"><%= link_to "Book" %></div>
+      <%= link_to new_bike_booking_path(@bike) do %>
+       <div class="btn btn-main">Book</div>
+      <% end %>
     </div>
   </div>
 </div>
