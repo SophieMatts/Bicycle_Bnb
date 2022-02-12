@@ -18,8 +18,20 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logos {
+  justify-content: flex-start;
+}
+
+.navbar-logo {
+  width: 100px;
+}
+
+.navbar-logo img {
+  width: 100px;
+}
+
+.navbar-brand img{
+  height: 20px;
 }
 
 .nav-buttons {
