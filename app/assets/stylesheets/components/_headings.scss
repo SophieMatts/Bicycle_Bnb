@@ -12,9 +12,18 @@
   color: $main-color;
 }
 
-p, label {
-  font-family: 'Noto sans', sans-serif !important;
-  font-size: 16px;
+
+.home-card-heading {
+  font-family: 'Aleo', serif;
+  color: #1C1565;
+}
+
+p {
+  font-family: 'Aleo', serif;
+  color: #1C1565;
+  margin:0px;
+  font-size: 15px;
+  font-weight:700;
 }
 
 label {

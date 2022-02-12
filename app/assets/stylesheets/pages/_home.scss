@@ -1,25 +1,47 @@
 // Specific CSS for your home-page
-h5
-{
-  margin:0px;
-  font-size: 15px;
-  font-weight:800;
-  font-family: 'Spectral', serif !important;
-}
-h6
-{
-  margin:0px;
-  font-size: 15px;
-  font-weight:700;
-  font-family: 'Spectral', serif !important;
-}
+
+
 
 body {
   background-color: #F4F4F4 !important;
 }
-// p
-// {
-//   font-size:12px;
-//   text-align: left;
-//   font-family: 'Spectral', serif !important;
-// }
+
+.column {
+  display: flex;
+  // float: left;
+  justify-content: space-around;
+  // width: 25%;
+  // padding: 0 50px;
+  // column-gap: 10px;
+}
+
+.cards-row {
+
+  margin-top: 30px;
+  justify-content: space-around;
+  display: flex;
+}
+.footer-row {
+  margin: 10px;
+  margin-top: 30px;
+  height: 100px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+

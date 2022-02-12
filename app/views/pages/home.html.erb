@@ -1,19 +1,3 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bicycle BNB</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
-    <!-- We need this line below for responsiveness! -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheets" href="components/_index.scss">
-    <link rel="stylesheets" href="configs/_fonts.scss">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  </head>
-
   <body>
     <div class="container">
       <%# <div id="flex-wrap">
@@ -23,11 +7,11 @@
       </div> %>
 
       <div id="flex-wrap">
-        <div class="row">
+        <div class="row cards-row">
           <%= link_to bikes_path do %>
             <div class="home_bike-card" style="background-image: url(https://media.istockphoto.com/photos/bicycle-wheels-closeup-picture-id1149625161?k=20&m=1149625161&s=612x612&w=0&h=gPw6yZpADzwB4NbUCLlBdZTd8sMZnxxOKGMbJrDEKHw=)">
               <div class="home_bike-description">
-                <h5> All Bikes </h5>
+                <h5 class="home-card-heading"> All Bikes </h5>
               </div>
             </div>
           <% end %>
@@ -35,14 +19,14 @@
 
           <div class="home_bike-card" style="background-image: url(https://media.istockphoto.com/photos/black-race-bike-picture-id173624261?k=20&m=173624261&s=612x612&w=0&h=XZSRNW5Vyl9GKTy9CGZ8aRwvbW9V5cxfbipK9pAGCzQ=)">
             <div class="home_bike-description">
-              <h5> Road </h5>
+              <h5 class="home-card-heading"> Road </h5>
               <p>For long Distance on the Road</p>
             </div>
           </div>
 
           <div class="home_bike-card" style="background-image: url(https://media.istockphoto.com/photos/orange-mountain-bicycle-picture-id481519682?k=20&m=481519682&s=612x612&w=0&h=afhGI_zkzraltRYIolN7oXRS4BjpQZwNzBReZagcrRc=)">
             <div class="home_bike-description">
-              <h5> Mountain </h5>
+              <h5 class="home-card-heading"> Mountain </h5>
               <p>Best for off-road<p>
             </div>
           </div>
@@ -52,75 +36,29 @@
     </div>
 
     <div class="container">
-      <%# <div id="flex-wrap">
-        <div>
-          <h5>Locations</h5>
-        </div>
-      </div> %>
       <div id="flex-wrap">
-        <div class="row">
+        <div class="row cards-row">
           <div class="location-card" style="background-image: url(http://static1.squarespace.com/static/535ed20ce4b06f620aba7217/53d318c8e4b02c5a7b25645c/53d31909e4b02c5a7b25762c/1406344187520/hipster-couple-with-bikes-in-london.jpg?format=1000w)">
             <div class="location-description">
-              <h5> London </h5>
-              <p>Hire from here!</p>
+              <h5 class="home-card-heading"> London </h5>
+              <p class="lcard-p"> Hire from here!</p>
             </div>
           </div>
 
           <div class="location-card" style="background-image: url(https://media.istockphoto.com/photos/young-woman-riding-a-bicycle-in-paris-picture-id542818912?k=20&m=542818912&s=612x612&w=0&h=jwckI3sBgUb7rkcSPj9n3NWDajCCvWaC0AEo_OIzQlw=)">
             <div class="location-description">
-              <h5> Paris </h5>
+              <h5 class="home-card-heading"> Paris </h5>
               <p>Hire from here!</p>
             </div>
           </div>
 
           <div class="location-card" style="background-image: url(https://media.istockphoto.com/photos/woman-traveling-in-amsterdam-picture-id842152262?k=20&m=842152262&s=612x612&w=0&h=RfUJzsGJgxmhC6JaRV6xfumPdgoyXtMRYrV4a_z3Di0=)">
             <div class="location-description">
-              <h5> Amsterdam </h5>
+              <h5 class="home-card-heading"> Amsterdam </h5>
               <p>Hire from here!</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div class="footer">
-      <hr>
-      <footer>
-        <div class="footer-row justify-content-center">
-          <div class="col-sm-4 col-md-3 item">
-            <h3>Support</h3>
-            <ul>
-              <li><a href="#">Help Centre</a></li>
-              <li><a href="#">Safety Information</a></li>
-              <li><a href="#">Cancellation Options</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-4 col-md-3 item">
-            <h3>Community</h3>
-            <ul>
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Meetup</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-4 col-md-3 item">
-            <h3>About</h3>
-            <ul>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Newsroom</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-row justify-content-center">
-          <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
-          </div>
-        </div>
-
-      </footer>
-    </div>
   </body>
-
-
-</html>

@@ -9,47 +9,57 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
   </head>
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container">
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag image_path("fullLogo.png") %>
-        <% end %>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to "Home", root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Bookings", bookings_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item dropdown">
-              <%= image_tag "https://cdn-icons-png.flaticon.com/512/149/149071.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%#= link_to "Action", "#", class: "dropdown-item" %>
-                <%#= link_to "Another action", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
+        <div class="logos">
+          <%= link_to root_path, class: "navbar-logo" do %>
+            <%= image_tag image_path("fullLogo.png") %>
           <% end %>
-        </ul>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag image_path("logo_text.png") %>
+          <% end %>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to "Home", root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Bookings", bookings_path, class: "nav-link" %>
+              </li>
+            <li class="nav-item dropdown">
+                <%= image_tag "https://cdn-icons-png.flaticon.com/512/149/149071.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%#= link_to "Action", "#", class: "dropdown-item" %>
+                  <%#= link_to "Another action", "#", class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container search-form-container ">
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
+        <div class="search-form-control">
           <input class="form-control string required col-4" type="text" name="search[query]" id="search-bike" placeholder="type of bike" />
           <input class="form-control string required" type="text" name="location[query]" id="search-location" placeholder="location" />
           <input class="form-control string required" type="text" name="start-date[query]" id="search-start-date" placeholder="from" />
@@ -63,90 +73,91 @@
     </div>
 
 
-    <div class="banner" id="banner">
-      <div class="imgban" id="imgban3">
+
+      <div class="banner" id="banner">
+        <div class="imgban" id="imgban3">
+        </div>
+        <div class="imgban" id="imgban2">
+
+        </div>
+        <div class="imgban" id="imgban1">
+
+        </div>
       </div>
-      <div class="imgban" id="imgban2">
 
-      </div>
-      <div class="imgban" id="imgban1">
+      <script>
+        var bannerStatus = 1;
+        var bannerTimer = 8000;
 
-      </div>
-    </div>
-
-    <script>
-      var bannerStatus = 1;
-      var bannerTimer = 8000;
-
-      window.onload = function() {
-        bannerLoop();
-      }
-
-      var startBannerLoop = setInterval(function() {
+        window.onload = function() {
           bannerLoop();
-      }, bannerTimer);
+        }
 
-      document.getElementById("banner").onmouseenter = function() {
-        clearInterval(startBannerLoop);
-      }
-
-      document.getElementById("banner").onmouseleave = function() {
-        startBannerLoop = setInterval(function() {
-          bannerLoop();
+        var startBannerLoop = setInterval(function() {
+            bannerLoop();
         }, bannerTimer);
-      }
 
-      function bannerLoop() {
-        if (bannerStatus === 1) {
-          document.getElementById("imgban2").style.opacity = "0";
-         setTimeout(function() {
-            document.getElementById("imgban1").style.right = "0px";
-            document.getElementById("imgban1").style.zIndex = "1000";
-            document.getElementById("imgban2").style.right = "-1200px";
-            document.getElementById("imgban2").style.zIndex = "1500";
-            document.getElementById("imgban3").style.right = "1200px";
-            document.getElementById("imgban3").style.zIndex = "500";
-          }, 500);
-          setTimeout(function() {
-            document.getElementById("imgban2").style.opacity = "1";
-          }, 1000);
-          bannerStatus = 2;
+        document.getElementById("banner").onmouseenter = function() {
+          clearInterval(startBannerLoop);
         }
 
-        else if (bannerStatus === 2) {
-          document.getElementById("imgban3").style.opacity = "0";
-         setTimeout(function() {
-            document.getElementById("imgban2").style.right = "0px";
-            document.getElementById("imgban2").style.zIndex = "1000";
-            document.getElementById("imgban3").style.right = "-1200px";
-            document.getElementById("imgban3").style.zIndex = "1500";
-            document.getElementById("imgban1").style.right = "1200px";
-            document.getElementById("imgban1").style.zIndex = "500";
-          }, 500);
-          setTimeout(function() {
-            document.getElementById("imgban3").style.opacity = "1";
-          }, 1000);
-          bannerStatus = 3;
+        document.getElementById("banner").onmouseleave = function() {
+          startBannerLoop = setInterval(function() {
+            bannerLoop();
+          }, bannerTimer);
         }
 
-        else if (bannerStatus === 3) {
-          document.getElementById("imgban1").style.opacity = "0";
-         setTimeout(function() {
-            document.getElementById("imgban3").style.right = "0px";
-            document.getElementById("imgban3").style.zIndex = "1000";
-            document.getElementById("imgban1").style.right = "-1200px";
-            document.getElementById("imgban1").style.zIndex = "1500";
-            document.getElementById("imgban2").style.right = "1200px";
-            document.getElementById("imgban2").style.zIndex = "500";
-          }, 500);
+        function bannerLoop() {
+          if (bannerStatus === 1) {
+            document.getElementById("imgban2").style.opacity = "0";
           setTimeout(function() {
-            document.getElementById("imgban1").style.opacity = "1";
-          }, 1000);
-          bannerStatus = 1;
-        }
+              document.getElementById("imgban1").style.right = "0px";
+              document.getElementById("imgban1").style.zIndex = "1000";
+              document.getElementById("imgban2").style.right = "-1200px";
+              document.getElementById("imgban2").style.zIndex = "1500";
+              document.getElementById("imgban3").style.right = "1200px";
+              document.getElementById("imgban3").style.zIndex = "500";
+            }, 500);
+            setTimeout(function() {
+              document.getElementById("imgban2").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 2;
+          }
 
-      }
-    </script>
+          else if (bannerStatus === 2) {
+            document.getElementById("imgban3").style.opacity = "0";
+          setTimeout(function() {
+              document.getElementById("imgban2").style.right = "0px";
+              document.getElementById("imgban2").style.zIndex = "1000";
+              document.getElementById("imgban3").style.right = "-1200px";
+              document.getElementById("imgban3").style.zIndex = "1500";
+              document.getElementById("imgban1").style.right = "1200px";
+              document.getElementById("imgban1").style.zIndex = "500";
+            }, 500);
+            setTimeout(function() {
+              document.getElementById("imgban3").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 3;
+          }
+
+          else if (bannerStatus === 3) {
+            document.getElementById("imgban1").style.opacity = "0";
+          setTimeout(function() {
+              document.getElementById("imgban3").style.right = "0px";
+              document.getElementById("imgban3").style.zIndex = "1000";
+              document.getElementById("imgban1").style.right = "-1200px";
+              document.getElementById("imgban1").style.zIndex = "1500";
+              document.getElementById("imgban2").style.right = "1200px";
+              document.getElementById("imgban2").style.zIndex = "500";
+            }, 500);
+            setTimeout(function() {
+              document.getElementById("imgban1").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 1;
+          }
+
+        }
+      </script>
 
 
 
@@ -156,5 +167,42 @@
 
 
     <%= yield %>
+
+    <div id= "footer" class="footer">
+      <hr>
+      <footer>
+        <div class="footer-row justify-content-center">
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Help Centre</a></li>
+              <li><a href="#">Safety Information</a></li>
+              <li><a href="#">Cancellation Options</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Community</h3>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Meetup</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Newsroom</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+          </div>
+        </div>
+
+      </footer>
+    </div>
   </body>
 </html>

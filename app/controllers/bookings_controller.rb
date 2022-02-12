@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
 
-
   # CRUD actions (methods) for the bookings controller
 
   def index
@@ -19,7 +18,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    if @booking.save
+    @booking.bike = get_bike
+
+    if @booking.save!
       redirect_to bookings_path
     else
       render :new
@@ -32,7 +33,9 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(params[:booking])
+    @booking.update(booking_params)
+    # @booking.update(end_date: params[:booking][:end_date], start_date: params[:booking][:start_date])
+    redirect_to bookings_path
   end
 
   def destroy
@@ -44,7 +47,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :bike_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def get_bike

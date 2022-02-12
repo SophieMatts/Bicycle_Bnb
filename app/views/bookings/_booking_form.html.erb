@@ -6,6 +6,7 @@
       <%= cl_image_tag @bike.photo.key %>
     </div>
     <div class="form-fields col-md-5 col-sm-12">
+
       <p><strong>Bike: </strong><%= @bike.title %></p>
       <p><strong>Type: </strong><%= @bike.bike_type %></p>
       <p><strong>Location: </strong><%= @bike.location%></p>
@@ -20,6 +21,6 @@
                              order: [:day, :month, :year],
                              label: "End date", class: "form-control"  %>
       <%= f.submit "Submit", class: "btn btn-main col-sm-12" %>
-    </div>
+    </form>
   <% end %>
 </form>
