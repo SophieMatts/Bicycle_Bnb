@@ -67,90 +67,91 @@
     </div>
 
 
-    <div class="banner" id="banner">
-      <div class="imgban" id="imgban3">
+
+      <div class="banner" id="banner">
+        <div class="imgban" id="imgban3">
+        </div>
+        <div class="imgban" id="imgban2">
+
+        </div>
+        <div class="imgban" id="imgban1">
+
+        </div>
       </div>
-      <div class="imgban" id="imgban2">
 
-      </div>
-      <div class="imgban" id="imgban1">
+      <script>
+        var bannerStatus = 1;
+        var bannerTimer = 8000;
 
-      </div>
-    </div>
-
-    <script>
-      var bannerStatus = 1;
-      var bannerTimer = 8000;
-
-      window.onload = function() {
-        bannerLoop();
-      }
-
-      var startBannerLoop = setInterval(function() {
+        window.onload = function() {
           bannerLoop();
-      }, bannerTimer);
+        }
 
-      document.getElementById("banner").onmouseenter = function() {
-        clearInterval(startBannerLoop);
-      }
-
-      document.getElementById("banner").onmouseleave = function() {
-        startBannerLoop = setInterval(function() {
-          bannerLoop();
+        var startBannerLoop = setInterval(function() {
+            bannerLoop();
         }, bannerTimer);
-      }
 
-      function bannerLoop() {
-        if (bannerStatus === 1) {
-          document.getElementById("imgban2").style.opacity = "0";
-         setTimeout(function() {
-            document.getElementById("imgban1").style.right = "0px";
-            document.getElementById("imgban1").style.zIndex = "1000";
-            document.getElementById("imgban2").style.right = "-1200px";
-            document.getElementById("imgban2").style.zIndex = "1500";
-            document.getElementById("imgban3").style.right = "1200px";
-            document.getElementById("imgban3").style.zIndex = "500";
-          }, 500);
-          setTimeout(function() {
-            document.getElementById("imgban2").style.opacity = "1";
-          }, 1000);
-          bannerStatus = 2;
+        document.getElementById("banner").onmouseenter = function() {
+          clearInterval(startBannerLoop);
         }
 
-        else if (bannerStatus === 2) {
-          document.getElementById("imgban3").style.opacity = "0";
-         setTimeout(function() {
-            document.getElementById("imgban2").style.right = "0px";
-            document.getElementById("imgban2").style.zIndex = "1000";
-            document.getElementById("imgban3").style.right = "-1200px";
-            document.getElementById("imgban3").style.zIndex = "1500";
-            document.getElementById("imgban1").style.right = "1200px";
-            document.getElementById("imgban1").style.zIndex = "500";
-          }, 500);
-          setTimeout(function() {
-            document.getElementById("imgban3").style.opacity = "1";
-          }, 1000);
-          bannerStatus = 3;
+        document.getElementById("banner").onmouseleave = function() {
+          startBannerLoop = setInterval(function() {
+            bannerLoop();
+          }, bannerTimer);
         }
 
-        else if (bannerStatus === 3) {
-          document.getElementById("imgban1").style.opacity = "0";
-         setTimeout(function() {
-            document.getElementById("imgban3").style.right = "0px";
-            document.getElementById("imgban3").style.zIndex = "1000";
-            document.getElementById("imgban1").style.right = "-1200px";
-            document.getElementById("imgban1").style.zIndex = "1500";
-            document.getElementById("imgban2").style.right = "1200px";
-            document.getElementById("imgban2").style.zIndex = "500";
-          }, 500);
+        function bannerLoop() {
+          if (bannerStatus === 1) {
+            document.getElementById("imgban2").style.opacity = "0";
           setTimeout(function() {
-            document.getElementById("imgban1").style.opacity = "1";
-          }, 1000);
-          bannerStatus = 1;
-        }
+              document.getElementById("imgban1").style.right = "0px";
+              document.getElementById("imgban1").style.zIndex = "1000";
+              document.getElementById("imgban2").style.right = "-1200px";
+              document.getElementById("imgban2").style.zIndex = "1500";
+              document.getElementById("imgban3").style.right = "1200px";
+              document.getElementById("imgban3").style.zIndex = "500";
+            }, 500);
+            setTimeout(function() {
+              document.getElementById("imgban2").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 2;
+          }
 
-      }
-    </script>
+          else if (bannerStatus === 2) {
+            document.getElementById("imgban3").style.opacity = "0";
+          setTimeout(function() {
+              document.getElementById("imgban2").style.right = "0px";
+              document.getElementById("imgban2").style.zIndex = "1000";
+              document.getElementById("imgban3").style.right = "-1200px";
+              document.getElementById("imgban3").style.zIndex = "1500";
+              document.getElementById("imgban1").style.right = "1200px";
+              document.getElementById("imgban1").style.zIndex = "500";
+            }, 500);
+            setTimeout(function() {
+              document.getElementById("imgban3").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 3;
+          }
+
+          else if (bannerStatus === 3) {
+            document.getElementById("imgban1").style.opacity = "0";
+          setTimeout(function() {
+              document.getElementById("imgban3").style.right = "0px";
+              document.getElementById("imgban3").style.zIndex = "1000";
+              document.getElementById("imgban1").style.right = "-1200px";
+              document.getElementById("imgban1").style.zIndex = "1500";
+              document.getElementById("imgban2").style.right = "1200px";
+              document.getElementById("imgban2").style.zIndex = "500";
+            }, 500);
+            setTimeout(function() {
+              document.getElementById("imgban1").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 1;
+          }
+
+        }
+      </script>
 
 
 
@@ -160,6 +161,7 @@
 
 
     <%= yield %>
+
     <div id= "footer" class="footer">
       <hr>
       <footer>
@@ -188,8 +190,8 @@
               <li><a href="#">Newsroom</a></li>
             </ul>
           </div>
-        </div>
-        <div class="footer-row justify-content-center">
+
+
           <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
           </div>
         </div>
