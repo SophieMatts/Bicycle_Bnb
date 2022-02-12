@@ -1,0 +1,21 @@
+<form class="booking-form">
+  <%= simple_form_for [@bike, @booking] do |f| %>
+    <div class="form-image col-md-7 col-sm-12"></div>
+    <form class="form-fields col-md-5 col-sm-12">
+      <p><strong>Bike: </strong><%= @bike.title %></p>
+      <p><strong>Type: </strong><%= @bike.bike_type %></p>
+      <p><strong>Location: </strong><%= @bike.location%></p>
+      <%= f.input :start_date, as: :date,
+                               start_year: Date.today.year,
+                               end_year: Date.today.year + 2,
+                               order: [:day, :month, :year],
+                               label: "Start date", class: "form-control"  %>
+      <%= f.input :end_date, as: :date,
+                             start_year: Date.today.year,
+                             end_year: Date.today.year + 2,
+                             order: [:day, :month, :year],
+                             label: "End date", class: "form-control"  %>
+      <%= f.submit "Submit", class: "btn btn-main col-sm-12" %>
+    </form>
+  <% end %>
+</form>

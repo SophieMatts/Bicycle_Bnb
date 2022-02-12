@@ -3,7 +3,7 @@
   font-family: 'Aleo', serif;
   font-size: 35px;
   color: $main-color ;
-
+  margin-bottom: 20px;
 }
 
 .sub-heading {
@@ -11,6 +11,7 @@
   font-size: 20px;
   color: $main-color;
 }
+
 
 .home-bike-heading {
   font-family: 'Aleo', serif;
@@ -29,4 +30,8 @@
 p {
   font-family: 'Noto sans', sans-serif !important;
   font-size: 16px;
+}
+
+label {
+  font-weight: bold;
 }

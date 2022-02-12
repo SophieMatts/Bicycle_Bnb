@@ -1,0 +1,39 @@
+.booking-form {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  align-content: stretch;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 767px) {
+  .booking-form {
+    flex-direction: column;
+  }
+}
+
+.form-fields {
+  flex-direction: column;
+  display: block;
+  align-items: stretch;
+}
+
+.form-fields p {
+  font-size: 16px;
+}
+
+.form-fields > * {
+  margin: 15px 0;
+}
+
+.form-fields .btn-main {
+  display: block;
+
+}
+
+.form-image {
+  width: 350px;
+  height: 350px;
+  background-color:#1C1565;
+  display:block;
+}
