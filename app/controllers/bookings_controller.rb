@@ -33,7 +33,9 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(params[:booking])
+    @booking.update(booking_params)
+    # @booking.update(end_date: params[:booking][:end_date], start_date: params[:booking][:start_date])
+    redirect_to bookings_path
   end
 
   def destroy
