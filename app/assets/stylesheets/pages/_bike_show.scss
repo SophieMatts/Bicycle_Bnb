@@ -22,6 +22,12 @@
   background-color: #000;
   flex-grow: 5;
   height: 350px;
+  width: 350px;
+  object-fit: cover;
+}
+
+.show-details {
+  flex-wrap: wrap;
 }
 
 .details {

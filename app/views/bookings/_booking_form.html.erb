@@ -1,6 +1,10 @@
 <form class="booking-form">
   <%= simple_form_for [@bike, @booking] do |f| %>
-    <div class="form-image col-md-7 col-sm-12" style="width: 350px; height: 350px; background-color:#1C1565; display:block;"></div>
+
+    <div class="form-image col-md-7 col-sm-12">
+
+      <%= cl_image_tag @bike.photo.key %>
+    </div>
     <div class="form-fields col-md-5 col-sm-12">
       <p><strong>Bike: </strong><%= @bike.title %></p>
       <p><strong>Type: </strong><%= @bike.bike_type %></p>

@@ -31,6 +31,9 @@
 
 }
 
-.form-image {
-
+.form-image img{
+  width: 350px;
+  height: 350px;
+  display:block;
+  object-fit: cover;
 }
