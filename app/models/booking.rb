@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   validate :end_date_after_start_date
 
   belongs_to :bike
+  belongs_to :user
   private
 
   def end_date_after_start_date
