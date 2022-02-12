@@ -35,17 +35,17 @@ locations = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Southamp
     puts "Failed"
   end
 
-  booking = Booking.create(
-    user_id: user.id,
-    bike_id: bike.id,
-    start_date: Date.today,
-    end_date: Date.today
-  )
-   if booking.save
-    puts "Booking added"
-  else
-    puts "Failed"
-  end
+  # booking = Booking.create(
+  #   user_id: user.id,
+  #   bike_id: bike.id,
+  #   start_date: Date.today,
+  #   end_date: Date.today
+  # )
+  #  if booking.save
+  #   puts "Booking added"
+  # else
+  #   puts "Failed"
+  # end
 end
 
 puts "Seeds added....."

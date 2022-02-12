@@ -3,7 +3,7 @@
   font-family: 'Aleo', serif;
   font-size: 35px;
   color: $main-color ;
-
+  margin-bottom: 20px;
 }
 
 .sub-heading {
@@ -12,7 +12,11 @@
   color: $main-color;
 }
 
-p {
+p, label {
   font-family: 'Noto sans', sans-serif !important;
   font-size: 16px;
+}
+
+label {
+  font-weight: bold;
 }
